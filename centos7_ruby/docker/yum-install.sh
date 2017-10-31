@@ -16,7 +16,7 @@ yum clean all
 rpm -ivh http://yum.postgresql.org/9.5/redhat/rhel-7-x86_64/pgdg-centos95-9.5-2.noarch.rpm
 yum -y update
 # yum -y install vim git-core postgresql95-server postgresql95-contrib postgresql95-devel man nano
-yum -y install postgresql95-contrib which
+yum -y install git-core postgresql95-contrib which
 
 yum -y install firefox              # Required by some Capybara tests.
 yum -y install fontconfig           # Required by PhantomJS.
