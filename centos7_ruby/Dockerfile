@@ -18,7 +18,7 @@ RUN bash docker/yum-install.sh
 # Install Ruby through RVM
 # If not running with bash -l, rvm command is not available
 RUN bash docker/install-rvm.sh 'stable'
-RUN bash -l docker/install-ruby.sh 2.4.2
+RUN bash -l docker/install-ruby.sh 2.4.2 'bundler -v 1.13.7'
 
 # Node, bundler, gems
 # RUN bash -l docker/install-app.sh
