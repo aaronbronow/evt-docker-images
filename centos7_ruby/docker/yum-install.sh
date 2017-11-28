@@ -22,6 +22,11 @@ yum -y install firefox              # Required by some Capybara tests.
 yum -y install fontconfig           # Required by PhantomJS.
 yum -y install graphviz             # Required by rails-erd gem.
 
+# Install nodejs (needed by coffescripts)
+curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+source ~/.bash_profile
+nvm install v5.8.0
+
 # /usr/pgsql-9.5/bin/postgresql95-setup initdb
 # systemctl start postgresql-9.5.service
 # systemctl enable postgresql-9.5.service
