@@ -5,3 +5,7 @@ FROM aaronbronow/centos7_ruby:2.4.2
 ENV WWW_ROOT /var/www
 RUN mkdir -p $WWW_ROOT
 WORKDIR $WWW_ROOT
+
+RUN adduser evt
+USER evt
+RUN bash -l docker/install-ruby.sh 2.4.2 'bundler -v 1.13.7'
