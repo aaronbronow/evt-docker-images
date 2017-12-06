@@ -2,7 +2,7 @@ FROM centos:7
 
 # Configure the main working directory.
 # This is the base directory used in any further RUN, COPY, and ENTRYPOINT commands.
-ENV APP_HOME /app
+ENV APP_HOME /var/centos7_ruby
 RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 
@@ -13,10 +13,20 @@ COPY . .
 RUN rm /etc/localtime && ln -s /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
 
 # Centos dependencies
-RUN bash docker/yum-install.sh
+RUN bash -l docker/yum-install.sh
+
+RUN adduser -ms /bin/bash evt; \
+  chown -R evt: .
+
+USER evt
 
 # Install RVM
-RUN bash docker/install-rvm.sh 'stable'
+RUN bash -l -c "docker/install-rvm.sh 'stable'"
+# RUN bash -l -c "rvm requirements 2.4.2"
+
+# Install Ruby
+# CMD bash -l su - evt
+RUN bash -l -c "docker/install-ruby.sh 2.4.2 'bundler -v 1.13.7'"
 
 # Node, bundler, gems
 # RUN bash -l docker/install-app.sh

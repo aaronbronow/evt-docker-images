@@ -11,3 +11,5 @@ then gem install $@
 fi
 
 rvm cleanup all
+
+echo source ~/.profile >> ~/.bashrc

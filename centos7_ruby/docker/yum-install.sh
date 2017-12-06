@@ -18,14 +18,12 @@ yum -y update
 # yum -y install vim git-core postgresql95-server postgresql95-contrib postgresql95-devel man nano
 yum -y install which sudo python git-core ssh-agent postgresql95-contrib postgresql95-devel
 
+# install RVM requirements
+yum -y install patch autoconf automake bison bzip2 gcc-c++ libffi-devel libtool make readline-devel sqlite-devel zlib-devel glibc-headers glibc-devel libyaml-devel openssl-devel
+
 yum -y install firefox              # Required by some Capybara tests.
 yum -y install fontconfig           # Required by PhantomJS.
 yum -y install graphviz             # Required by rails-erd gem.
-
-# Install nodejs (needed by coffescripts)
-curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
-source ~/.bash_profile
-nvm install v5.8.0
 
 # /usr/pgsql-9.5/bin/postgresql95-setup initdb
 # systemctl start postgresql-9.5.service
