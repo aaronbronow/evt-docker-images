@@ -9,3 +9,4 @@ source ~/.bash_profile
 nvm install v5.8.0
 
 pip install awscli==1.11.18 --user
+echo -e "PATH=~/.local/bin:$PATH" >> ~/.bash_profile
