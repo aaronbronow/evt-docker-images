@@ -11,7 +11,7 @@
 yum -y update
 yum -y upgrade
 yum clean all
-#yum -y install epel-release
+yum -y install epel-release
 #yum -y update
 rpm -ivh http://yum.postgresql.org/9.5/redhat/rhel-7-x86_64/pgdg-centos95-9.5-2.noarch.rpm
 yum -y update
