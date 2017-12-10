@@ -7,3 +7,5 @@ echo -e "install: --no-document\nupdate: --no-document" > ~/.gemrc
 curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
 source ~/.bash_profile
 nvm install v5.8.0
+
+pip install awscli --upgrade --user
