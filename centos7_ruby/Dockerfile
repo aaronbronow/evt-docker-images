@@ -1,4 +1,6 @@
+ARG RUBY_VERSION=2.4.2
 FROM centos:7
+ARG RUBY_VERSION
 
 # Configure the main working directory.
 # This is the base directory used in any further RUN, COPY, and ENTRYPOINT commands.
@@ -26,12 +28,10 @@ RUN bash -l -c "docker/install-rvm.sh 'stable'"
 
 # Install Ruby
 # CMD bash -l su - evt
-RUN bash -l -c "docker/install-ruby.sh 2.4.2 'bundler -v 1.13.7'"
+RUN bash -l -c "docker/install-ruby.sh $RUBY_VERSION 'bundler -v 1.13.7'"
 
 # Node, bundler, gems
 # RUN bash -l docker/install-app.sh
-
-RUN bash -l -c 'echo PATH=/home/evt/.rvm/gems/ruby-2.4.2/bin:/home/evt/.rvm/gems/ruby-2.4.2@global/bin:/home/evt/.rvm/rubies/ruby-2.4.2/bin:$PATH >> ~/.bashrc'
 
 # Expose port 3000 and 8888 to the Docker host, so we can access it from the outside.
 #EXPOSE 3000 8086
