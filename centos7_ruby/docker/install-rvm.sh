@@ -11,4 +11,4 @@ nvm install v5.8.0
 pip install awscli==1.11.18 --user
 source ~/.bash_profile
 
-echo -e "PATH=$HOME/.local/bin:$PATH" >> ~/.bashrc
+echo -e 'PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
