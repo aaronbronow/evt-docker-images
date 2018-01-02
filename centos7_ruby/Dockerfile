@@ -28,7 +28,8 @@ RUN bash -l -c "docker/install-rvm.sh 'stable'"
 
 # Install Ruby
 # CMD bash -l su - evt
-RUN bash -l -c "docker/install-ruby.sh $RUBY_VERSION 'bundler -v 1.13.7'"
+RUN bash -l -c "docker/install-ruby.sh $RUBY_VERSION"
+RUN bash -l -c 'gem install bundler -v 1.13.7'
 
 # Node, bundler, gems
 # RUN bash -l docker/install-app.sh

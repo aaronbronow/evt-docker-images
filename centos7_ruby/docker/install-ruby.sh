@@ -8,10 +8,4 @@ echo PATH=/home/evt/.rvm/gems/ruby-$1/bin:/home/evt/.rvm/gems/ruby-$1@global/bin
 echo GEM_HOME=/home/evt/.rvm/gems/ruby-$1 >> ~/.bashrc
 echo GEM_PATH=/home/evt/.rvm/gems/ruby-$1:/home/evt/.rvm/gems/ruby-$1@global >> ~/.bashrc
 
-shift
-
-if (( $# ))
-then gem install $@
-fi
-
 rvm cleanup all
