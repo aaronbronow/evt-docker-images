@@ -38,4 +38,4 @@ RUN bash -l -c 'gem install bundler -v $BUNDLER_VERSION'
 
 # Expose port 3000 and 8888 to the Docker host, so we can access it from the outside.
 #EXPOSE 3000 8086
-EXPOSE 22 2226
+# EXPOSE 22 2226
