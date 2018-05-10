@@ -13,7 +13,7 @@ rpm -ivh http://yum.postgresql.org/9.5/redhat/rhel-7-x86_64/pgdg-centos95-9.5-2.
 rpm -vhU https://nmap.org/dist/ncat-7.60-1.x86_64.rpm
 
 yum -y update
-yum -y install which wget sudo python python-pip git-core ssh-agent postgresql95-contrib postgresql95-devel
+yum -y install rsync which wget sudo python python-pip git-core ssh-agent postgresql95-contrib postgresql95-devel
 
 # install RVM requirements
 yum -y install patch autoconf automake bison bzip2 gcc-c++ libffi-devel libtool make readline-devel sqlite-devel zlib-devel glibc-headers glibc-devel libyaml-devel openssl-devel
