@@ -1,8 +1,6 @@
-ARG RUBY_VERSION=2.4.2
-ARG BUNDLER_VERSION=1.16.1
+ARG RUBY_VERSION=2.5.0
 FROM centos:7
 ARG RUBY_VERSION
-ARG BUNDLER_VERSION
 
 # Configure the main working directory.
 # This is the base directory used in any further RUN, COPY, and ENTRYPOINT commands.
@@ -30,8 +28,9 @@ RUN bash -l -c "docker/install-rvm.sh 'stable'"
 
 # Install Ruby
 # CMD bash -l su - evt
+RUN bash -l -c "docker/install-ruby.sh 2.4.2"
 RUN bash -l -c "docker/install-ruby.sh $RUBY_VERSION"
-RUN bash -l -c 'gem install bundler -v $BUNDLER_VERSION'
+RUN bash -l -c "docker/set-path.sh $RUBY_VERSION"
 
 # Node, bundler, gems
 # RUN bash -l docker/install-app.sh
